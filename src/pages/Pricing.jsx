@@ -1,5 +1,6 @@
 // pages/Pricing.jsx
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Pricing = () => {
   return (
@@ -31,12 +32,12 @@ const Pricing = () => {
                 <li key={i}>{feature}</li>
               ))}
             </ul>
-            <a
+            <NavLink
               href="/contact"
               className="inline-block bg-teal-400 hover:bg-teal-500 text-white font-semibold py-2 px-4 rounded-lg transition"
             >
               Get Started
-            </a>
+            </NavLink>
           </div>
         ))}
       </div>
