@@ -4,6 +4,7 @@ import App from "./App";
 import "./styles/input.css"; // Tailwind CSS
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />

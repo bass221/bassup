@@ -2,8 +2,10 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx}"
+    "./src/**/*.{js,jsx}",
+    "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
   ],
+
   darkMode: 'class',
   theme: {
     extend: {
