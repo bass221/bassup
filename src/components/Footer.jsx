@@ -25,22 +25,22 @@ const Footer = () => {
           <p>Email: <a href="mailto:sagnab034@gmail.com" className="text-teal-400 hover:underline">sagnab034@gmail.com</a></p>
           <p>Location: Kedah, Alor Setar, Malaysia</p>
 
-          <div className="mt-4 flex items-center gap-4 text-xl">
+          <div className="mt-4 flex flex-col items-start gap-4 text-xl">
             <a
               href="https://www.linkedin.com/in/bassirou-sagna-a66b04342"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-teal-400"
+              className="hover:text-teal-400 flex items-center gap-2"
             >
-              <i className="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i> LinkedIn
             </a>
             <a
               href="https://www.instagram.com/baay_bass221"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-teal-400"
+              className="hover:text-teal-400 flex items-center gap-2"
             >
-              <i className="fab fa-instagram"></i>
+              <i className="fab fa-instagram"></i> Instagram
             </a>
           </div>
         </div>
