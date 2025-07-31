@@ -11,9 +11,15 @@ const About = () => {
         BassUp is a creative web design studio that helps individuals and small businesses bring their online presence to life.
       </p>
       <p className="text-gray-600 max-w-3xl mx-auto text-center mt-4 dark:text-white">
-        We combine design, strategy, and technology to give you a complete solution tailored to your needs.
+        We combine design, strategy, and technology to give you a complete solution tailored to your needs.This is the main website all links to access
+        the other website builders are right under the service dropdown section, it is easy, affordable and enjoyable as well, we got all the tools you need just pass and
+        <b className="text-teal-400"> Bass</b> this up 💪🏿
       </p>
-      <br /><hr />
+      <br /><hr/>
+      <p className="text-gray-600 max-w-3xl mx-auto text-center mt-4 dark:text-white">
+        ⚠️ E-commerce Builder (Comming up soon) <br />
+        ⚠️ Business website Builder (Comming up soon)
+      </p>
       <p className="text-gray-600 max-w-3xl mx-auto text-center mt-4 dark:text-white">
         Built by Bassirou Sagna
       </p>

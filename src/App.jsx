@@ -7,27 +7,37 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
-import Navbar from "./components/Navbar";  // Add this
-import Footer from "./components/Footer";  // Add this
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
 import PortfolioBuilder from "./pages/PortfolioBuilder";
 import EcommerceBuilder from "./pages/EcommerceBuilder";
 import AgencyBuilder from "./pages/AgencyBuilder";
 
-
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // ✅ Load from localStorage initially
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    return saved === "true";
+  });
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
+useEffect(() => {
+  localStorage.setItem("darkMode", darkMode);
+
+  if (darkMode) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  console.log("DARK MODE:", darkMode); // Optional debug log
+}, [darkMode]);
+
 
   return (
     <Router>
       <div className={darkMode ? "dark bg-black text-white" : "bg-white text-black"}>
-
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<CreatorForm />} />
@@ -42,7 +52,6 @@ const App = () => {
           <Route path="/services/business" element={<AgencyBuilder />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-
         <Footer />
       </div>
     </Router>

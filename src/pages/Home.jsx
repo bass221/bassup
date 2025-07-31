@@ -2,46 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  useEffect(() => {
-    const toggleBtn = document.getElementById('theme-toggle');
-    const mobileMenuBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    const applyInitialTheme = () => {
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && userPrefersDark)) {
-        document.documentElement.classList.add('dark');
-        if (toggleBtn) toggleBtn.textContent = '☀️';
-      } else {
-        document.documentElement.classList.remove('dark');
-        if (toggleBtn) toggleBtn.textContent = '🌙';
-      }
-    };
-
-    const handleThemeToggle = () => {
-      document.documentElement.classList.toggle('dark');
-      if (document.documentElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '☀️';
-      } else {
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '🌙';
-      }
-    };
-
-    const handleMobileToggle = () => {
-      mobileMenu?.classList.toggle('hidden');
-    };
-
-    applyInitialTheme();
-    toggleBtn?.addEventListener('click', handleThemeToggle);
-    mobileMenuBtn?.addEventListener('click', handleMobileToggle);
-
-    return () => {
-      toggleBtn?.removeEventListener('click', handleThemeToggle);
-      mobileMenuBtn?.removeEventListener('click', handleMobileToggle);
-    };
-  }, []);
 
   return (
     <div className="bg-white text-gray-800 dark:bg-gray-800 dark:text-white font-sans">
@@ -64,32 +24,28 @@ const Home = () => {
               icon: '⚡',
               title: 'Fast Delivery',
               text: 'We deliver websites in record time without sacrificing quality.',
-              href: '/services#delivery',
             },
             {
               icon: '📱',
               title: 'Fully Responsive',
               text: 'Your website will look perfect on desktop, tablet, and mobile devices.',
-              href: '/services#responsive',
               delay: 'delay-100',
             },
             {
               icon: '🎨',
               title: 'Custom Design',
               text: 'Every site is tailored to match your brand, goals, and audience.',
-              href: '/services#custom',
               delay: 'delay-200',
             },
-          ].map(({ icon, title, text, href, delay = '' }, i) => (
-            <Link
+          ].map(({ icon, title, text, delay = '' }, i) => (
+            <div
               key={i}
-              to={href}
-              className={`bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-fade-in ${delay}`}
+              className={`bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-fade-in ${delay} cursor-default`}
             >
               <div className="text-4xl mb-4 text-teal-500">{icon}</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{title}</h3>
               <p className="text-gray-600 dark:text-gray-300">{text}</p>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -101,9 +57,10 @@ const Home = () => {
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             {[
               {
-                img: 'images/voitkevichB.jpg',
-                title: 'Fashion Store',
+                img: 'images/portfolio.png',
+                title: 'Portfolio builder',
                 desc: 'Clean, modern e-commerce design',
+                link: 'https://portfolio-builder-sepia.vercel.app/'
               },
               {
                 img: 'images/photo.webp',
@@ -114,7 +71,7 @@ const Home = () => {
               {
                 img: 'images/fauxels.jpg',
                 title: 'Tech Business',
-                desc: 'Landing page for SaaS startup',
+                desc: 'Coming up soon',
               },
             ].map(({ img, title, desc, link }, i) => (
               <div key={i} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden animate-fade-in">
