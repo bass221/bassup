@@ -33,7 +33,7 @@ const Pricing = () => {
               ))}
             </ul>
             <NavLink
-              href="/contact"
+              to="/contact"
               className="inline-block bg-teal-400 hover:bg-teal-500 text-white font-semibold py-2 px-4 rounded-lg transition"
             >
               Get Started
