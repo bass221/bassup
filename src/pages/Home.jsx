@@ -60,7 +60,7 @@ const Home = () => {
               {
                 img: 'images/portfolio.png',
                 title: 'Portfolio builder',
-                desc: 'Build a professional portfolio with ease',
+                desc: '⚠️ PAYMENT METHOD UNDER MENTENENCE!',
                 link: 'https://portfolio-builder-sepia.vercel.app/'
               },
               {
